@@ -1,3 +1,9 @@
+
+
+
+
+
+
 let filmes = [
 
     // Criando objeto dentro dos arrays
@@ -37,23 +43,11 @@ let filmes = [
 
 ];
 
-
-
-
-
-
-
-
-
-
-
+//FAZENDO O CRUD- CREATE, RED, UPDATE, DELETE 
 
 /* CREATE (esta ferramenta permite o usuário
 adicionar filmes) e UPDATE (esta ferramenta permite o usuário
 ver filmes) */
-
-
-
 
 let nomeFilme = prompt("Qual é o nome do Filme")
 let dataLancamentoFilme = prompt("Qual é a data de lancamento do Filme")
@@ -75,18 +69,18 @@ listartudo =""
 
 filmes.forEach(function(filmes){
 
- listartudo += `Esses são os fimes disponíveis no momento\n\nNome: ${filmes.nome}\nData de Lançamento:
+ listartudo +=`\nNome: ${filmes.nome}\nData de Lançamento:
 ${filmes.dataLancamento}\nNúmero de episódio: ${filmes.NumeroEpisodio}\nNúmeros de temporadas:
  ${filmes.NumeroTemporada}`
 
 });
 
+console.log("Este são os filmes dispopníveis agora")
+
 console.log(listartudo)
 
-
-
 /* DELETE (esta ferramenta permite o usuário
-adicionar filmes) */
+deletar filmes) */
 
 let apagar = prompt("Qual Filme deseja apagar,\n coloque o nome do filme")
 let index = filmes.findIndex(function(value){
@@ -94,10 +88,19 @@ let index = filmes.findIndex(function(value){
         
 });
 
+if (index !== -1) {
+    filmes.splice(index, 1)
+    console.log("Filme excluído com suceso")
+}else{
+console.log("Este filme não existe")     
+
+}
+
+console.log(filmes)
 
 
 /*EDIT (esta ferramenta permite o usuário
-adicionar filmes) */
+editar filmes) */
 
 
 
